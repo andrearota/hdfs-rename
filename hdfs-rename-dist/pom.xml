@@ -4,7 +4,7 @@
 
 	<groupId>com.tenaris.bigdata</groupId>
 	<artifactId>hdfs-rename-dist</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
     <name>HDFS Bulk Rename tool dist</name>
@@ -18,7 +18,7 @@
         <dependency>
 			<groupId>com.tenaris.bigdata</groupId>
 			<artifactId>hdfs-rename-cli</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
         </dependency>
     </dependencies>
 

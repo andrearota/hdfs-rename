@@ -18,7 +18,7 @@ public class Renamer {
 		config.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
 	}
 
-	public void rename(String path, String searchRegexStr, String template, boolean verbose) throws IOException {
+	public void rename(String path, String searchRegexStr, String template, boolean verbose, boolean dryRun) throws IOException {
 		
 		// Check input variables
 		if(path == null || path.trim().isEmpty()) {
@@ -51,12 +51,18 @@ public class Renamer {
 				String renamed = name.replaceAll(searchRegexStr, template);
 				
 				if(!name.equals(renamed)) {
-					if(verbose) {
+					
+					if(verbose && dryRun) {
+						System.out.println("Would be renaming " + name + " in " + renamed);
+					} else if(verbose && !dryRun) {
 						System.out.println("Renaming " + name + " in " + renamed);
 					}
 					
-					if(hadoopFs.rename(fileStatus[i].getPath(), new Path(path, renamed)) == false) {
-						System.err.println("Unable to create " + renamed + ", does the file exist already?");
+					if(!dryRun) {
+						boolean renameSuccess = hadoopFs.rename(fileStatus[i].getPath(), new Path(path, renamed));
+						if(!renameSuccess) {
+							System.err.println("Unable to create " + renamed + ", does the file exist already?");						
+						}
 					}
 				}
 			}

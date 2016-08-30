@@ -20,7 +20,7 @@ public class RenamerTest {
 		String replaceRegexStr = "$1.avro";
 		boolean verbose = true;
 		
-		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose );
+		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose, false);
 		
 	}
 	
@@ -33,7 +33,7 @@ public class RenamerTest {
 		String replaceRegexStr = "$1.avro";
 		boolean verbose = true;
 		
-		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose );
+		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose, false);
 		
 	}
 	
@@ -46,7 +46,7 @@ public class RenamerTest {
 		String replaceRegexStr = "$1.avro";
 		boolean verbose = true;
 		
-		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose );
+		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose, false);
 		
 	}
 
@@ -59,7 +59,7 @@ public class RenamerTest {
 		String replaceRegexStr = "";
 		boolean verbose = true;
 		
-		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose );
+		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose, false);
 		
 	}
 
@@ -72,7 +72,7 @@ public class RenamerTest {
 		String replaceRegexStr = "foo.avro";
 		boolean verbose = true;
 		
-		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose );
+		renamer.rename(path, searchRegexStr, replaceRegexStr, verbose, false);
 		
 	}
 	
