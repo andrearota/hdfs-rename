@@ -13,13 +13,14 @@ The tool requires the path to `HADOOP_CONFIG`, i.e. the folder containing `hdfs-
 ## Syntax
 
 ```
-hdfs-rename hadoop_config_path folder regex new_name_template
+hdfs-rename hadoop_config_path folder regex new_name_template [--dry-run]
 ```
 
 Please note that:
 * `regex should` be in Java format, no extra escaping in required (see the example)
 * `new_name_template` should recall group values using `$n`, where `n` is the number of the groups starting from 1
 * both `regex` an `new_name_template` should be included in single quotes (Linux) or double quotes (Windows)
+* when `--dry-run` option is specified, the tools will tell which files will be renamed, without actually renaming them
 
 Here an example of tool usage:
 ```
